@@ -36,28 +36,32 @@ $(document).ready(function(){
    position: fixed;
    left: 0;
    bottom: 0;
-   width: 100%;
+   width: 9%;
    background-color: #17a2b8;
    color: white;
    text-align: left;
+   min-width: 125px;
 }
+
 </style>
 
     <title>GitHubFinder</title>
   </head>
   <body>
-   	<div calss="col" >
-		<h1 style="text-align: center"> GitHub Finder</h1>
+	<div class="container" >
+   	<div calss="col page-header" >
+		<h1 style="text-align: center "> GitHub Finder</h1>
 		<div class="mark " style="background-color: #17a2b8"></div>
    	</div>
 	<div class="jumbotron row" style="text-align: center">
 	 
-    		<div class="col">
+    		<div class="col" >
 			<input type="text" id="inputText" style="text-align: center">
 			<button  id="btnUsr" type="button" class="btn btn-info">BUSCAR</button>
 		</div>	
 	</div>
- <table class="table table-striped" style="text-align: center">
+	
+ <table class="table table-striped " style="text-align: center">
     <thead>
       <tr>
         <th>NAME</th>
@@ -67,11 +71,13 @@ $(document).ready(function(){
     </thead>
      <tbody>
      </tbody>
-	<code></code>
-	<div class="footer" >
+	
+	<div class="footer">
 		<a style="color: white" href="https://github.com/bartokid">
-		<h6 style="margin-left:2% ">   Made by: @Bartokid   </h6>
+		<h6 style="margin-left:2% ">   By: Bartokid ©  </h6>
 		</a>
+	</div>
+	</div>
 		
   </body>
 </html>
