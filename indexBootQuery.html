@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<!-- Obtener Data de Github -->
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $('table tbody').empty();
+    $.get("https://api.github.com/users/" + $("#inputText").val() + "/repos", function(data, status){
+	console.log(data);
+      for (var i = 0; i < data.length; i++) {
+              $("table").append("<tr class='text-info'><td>" + data[i].name + "</td><td>" + data[i].description + "</td><td>" + data[i].stargazers_count + "</td></tr>");
+            }
+    });
+  });
+});
+</script>
+
+
+<!--estilos-->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #17a2b8;
+   color: white;
+   text-align: left;
+}
+</style>
+
+    <title>GitHubFinder</title>
+  </head>
+  <body>
+   	<div calss="col" >
+		<h1 style="text-align: center"> GitHub Finder</h1>
+		<div class="mark " style="background-color: #17a2b8"></div>
+   	</div>
+	<div class="jumbotron row" style="text-align: center">
+	 
+    		<div class="col">
+			<input type="text" id="inputText" style="text-align: center">
+			<button  id="btnUsr" type="button" class="btn btn-info">BUSCAR</button>
+		</div>	
+	</div>
+ <table class="table table-striped" style="text-align: center">
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>#FOLLOWERS</th>
+      </tr>
+    </thead>
+     <tbody>
+     </tbody>
+	<code></code>
+	<div class="footer" >
+		<a style="color: white" href="https://github.com/bartokid">
+		<h6 style="margin-left:2% ">   Made by: @Bartokid   </h6>
+		</a>
+		
+  </body>
+</html>
